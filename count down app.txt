@@ -1,0 +1,62 @@
+package Lab6;
+import java.awt.*; // Using AWT container and component classes
+import java.awt.event.*; // Using AWT event classes and listener
+
+	public class AWTCounter extends Frame
+	{
+		private Label lblCount;
+		private TextField tfCount;
+		private Button btnCount;
+		private int count=100;
+		
+		public AWTCounter()
+		{
+			setLayout(new FlowLayout());
+			
+		lblCount=new Label("Counter");
+		
+		add(lblCount);
+		tfCount=new TextField(count + " ", 10);
+		
+		tfCount.setEditable(false); // set to read-only
+		add(tfCount);
+		btnCount = new Button("Countdown"); // construct the Button
+		add(btnCount);
+		
+		
+		BtnCountListener listener = new BtnCountListener();
+		btnCount.addActionListener((ActionListener) listener);
+	
+		
+		actionPerformed();
+		// Clicking "Count" button calls back actionPerformed().
+		setTitle("Muneeba Mehmood 054 AWT Countdown"); // "super" Frame sets its 
+		setSize(300, 100); // "super"
+		setVisible(true);
+		
+		}
+	
+		private void actionPerformed() {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		public static void main(String[] args) {
+			
+			AWTCounter app = new AWTCounter();
+			// or simply "new AWTCounter();" for an anonymous instance
+			}
+			// Define an inner class to handle the "Count" button-click
+			private class BtnCountListener implements ActionListener {
+			// ActionEvent handler - Called back upon button-click.
+			@Override
+			public void actionPerformed(ActionEvent evt) {
+			--count; // Increase the counter value
+			// Display the counter value on the TextField tfCount
+			tfCount.setText(count + ""); // Convert int to String
+			}
+		}
+
+		
+	}
