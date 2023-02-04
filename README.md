@@ -1,3 +1,4 @@
 # Java-Counter
 Counter app made in java.
-A simple counter app is made in eclippse using java. 
+A simple counter app  and a countdown app  made in eclippse using java. 
+
